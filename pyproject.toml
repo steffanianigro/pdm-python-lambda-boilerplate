@@ -1,0 +1,20 @@
+[project]
+name = "app"
+version = "0.1.0"
+dependencies = []
+requires-python = ">=3.13"
+
+[dependency-groups]
+dev = [
+    "-e file:///${PROJECT_ROOT}/packages/api",
+]
+test = [
+    "pytest>=8.3.4",
+    "pytest-mock>=3.14.0",
+    "moto[dynamodb,ssm]>=5.0.28",
+    "freezegun>=1.5.1",
+    "pytest-env>=1.1.5"
+]
+
+[tool.setuptools]
+py-modules = []
